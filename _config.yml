@@ -1,0 +1,75 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Elena Gronskaya's Personal Website
+email: nelle178@aol.com
+# description: >- # this means to ignore newlines until "baseurl:"
+  # My Blog
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://gronskaya.org" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  egronskaya
+
+destination: ~/Documents/static_web/egronskaya
+permalink: /:title/
+
+# Build settings
+markdown: kramdown
+plugins:
+  # - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+
+excerpt_separator: <!--more-->
+# excerpt_separator: ""
+
+# For local MathJax - keep the repository in the output folder
+keep_files: [mathjax]
+
+collections:
+  # Drafts collection allows to see drafrs on Github Pages in a served form.
+  drafts:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      title: Elena Gronskaya's Personal Website
+      author: Elena Gronskaya
+      layout: default_layout
+      abs_thumbnail: assets/img/default_thumbnail.jpg
+      language: en
+  -
+    scope:
+      path: "css/node_modules"
+    values:
+      sitemap: false
+
+# Replacing the footnote reverse link: https://github.com/gettalong/kramdown/issues/247
+kramdown:
+  footnote_backlink: '&#8593;&#65038;'
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

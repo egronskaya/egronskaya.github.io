@@ -1,0 +1,16 @@
+<!-- Inspired by https://eduardoboucas.com/blog/2014/12/07/including-and-managing-images-in-jekyll.html -->
+
+{% assign image_path = page.path | split: '/' | last | replace: '.md', '' | replace: '.html', '' | append: '/' | append: include.file %}
+{% if include.portrait %}
+  {% assign img_class="img-portrait" %}
+{% else %}
+  {% assign img_class="img-landscape" %}
+{% endif %}
+<figure>
+  <a href="/assets/img/posts/{{ image_path }}" data-lightbox="page_image">
+    <img src="/assets/img/posts/{{ image_path }}" {% if include.alt %} alt="{{ include.alt }}" {% endif %} class="{{ img_class }}"/>
+  </a>
+  {% if include.caption %}
+  <figcaption class="font-italic mt-1" markdown="span">{{ include.caption | markdownify | remove: '<p>' | remove: '</p>' }}</figcaption>
+  {% endif %}
+</figure>

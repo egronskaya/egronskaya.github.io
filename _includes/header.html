@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 align-self-center pb-2 pb-sm-0">
+        <div class="h2 font-weight-light mb-0 pl-1 pl-sm-3" id="site-header-title">
+          <a href="{% link index.html %}">Elena Gronskaya</a>
+        </div>
+      </div>
+      
+      <div class="col-md-6 align-self-center">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link {% if page.nav_active == "Home" %}active{% endif %}" href="{% link index.html %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if page.nav_active == "Projects" %}active{% endif %}" href="{% link projects.html %}">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if page.nav_active == "Other" %}active{% endif %}" href="{% link other.html %}">Other</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <hr>
+  </div>
+</header>

@@ -1,0 +1,80 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="{{ page.title }}">
+<meta name="author" content="Elena Gronskaya">
+
+<!-- OpenGraph Properties -->
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="{{ page.title }}"/>
+<meta property="og:description" content="{% if page.excerpt %}
+    {{ page.excerpt | strip_html | escape_once }}
+  {% else %} 
+    {{ page.description }}
+  {% endif %}" 
+/>
+<meta property="og:site_name" content="Elena Gronskaya">
+<meta property="og:image" content="{% if page.thumbnail %}
+    {% assign image_path = page.path | split: '/' | last | replace: '.md', '' | replace: '.html', '' | append: '/' | append: page.thumbnail %}
+    /assets/img/posts/{{ image_path }}
+  {% elsif page.abs_thumbnail %}
+    {{ page.abs_thumbnail | absolute_url }}
+  {% else %}
+    {{site.url}}{% link /assets/img/elena_gronskaya_photo.jpg %}
+  {% endif %}" /> 
+
+<!-- Twitter Properties -->
+<meta name="twitter:card" content="{{page.title}}"/>
+<meta name="twitter:title" content="{{page.title}}"/>
+<meta name="twitter:description" content="{% if page.excerpt %}
+    {{ page.excerpt | strip_html | escape_once }}
+  {% else %} 
+    {{ page.description }}
+  {% endif %}"
+/>
+
+<!-- Google Authorship -->
+<a rel="author" href="https://plus.google.com/u/0/100694244192184027539"></a>
+
+<link rel="icon" href="{% link favicon.ico %}">
+
+<link rel="alternate" href="{{ page.url | absolute_url }}" hreflang="x-default" />
+<link rel="alternate" href="{{ page.url | absolute_url }}" hreflang="{{ page.language }}" />
+
+<!-- Robots indexing is switched off for some files -->
+{% if page.meta_robots %}    
+<meta name="robots" content="{{ page.meta_robots }}">
+{% elsif layout.meta_robots %}
+<meta name="robots" content="{{ layout.meta_robots }}">
+{% else %}
+<meta name="robots" content="all">
+{% endif %}
+
+<!-- MathJax support -->
+{% if page.mathjax == true %}
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<script>
+        MathJax.Hub.Config({
+            config: ["MMLorHTML.js"],
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX"],
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: false
+            },
+            TeX: {
+                TagSide: "right",
+                TagIndent: ".8em",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                   autoNumber: "AMS",
+                },
+                unicode: {
+                   fonts: "STIXGeneral,'Arial Unicode MS'"
+                }
+            },
+            showProcessingMessages: false,
+            messageStyle: "none"
+        });
+</script>
+{% endif %}

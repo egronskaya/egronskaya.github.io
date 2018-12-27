@@ -1,0 +1,48 @@
+---
+permalink: /404.html
+layout: null
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Alexey Gronskiy Personal Website">
+    <meta name="author" content="Alexey Gronskiy">
+    <link rel="icon" href="favicon.ico?version=4">
+
+    <title>Alexey Gronskiy Homepage</title>
+
+    {% include css.html %}
+    
+  </head>
+
+  <body>
+    <div class="container">
+      {% include header.html %}
+
+      <main role="main">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 pb-md-2 pt-2 pb-4 text-center">
+              <h3>  <span class="fa fa-exclamation-triangle"></span> 404: Page not found :(</h3>
+            </div>
+          </div>
+          <p><a href="{% link index.html %}"><span class="fa fa-angle-double-left"></span> Go to Home page</a></p>
+          <hr>
+        </div>
+        
+      </main>
+
+      
+
+      <footer class="footer">
+        <p>&copy; Alexey Gronskiy, {{ 'now' | date: "%Y" }}</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    {% include scripts.html %}
+  </body>
+</html>

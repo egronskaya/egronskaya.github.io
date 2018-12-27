@@ -1,0 +1,33 @@
+---
+---
+
+<!doctype html>
+<html lang="{{ page.language }}">
+  <head>
+    {% include meta_head.html %}
+    
+    {% include css.html %}
+    
+    <title>{{page.title}}</title>
+  </head>
+
+  <body>
+    <div class="container">
+      
+      {% include header.html %}
+
+      <div class="container">
+        
+        {{ content }}
+        <p><a href="#"><span class="fa fa-angle-double-up"></span> Go to top</a></p>
+        <hr>
+        
+      </div> 
+
+      {% include footer.html %}
+
+    </div> <!-- /container -->
+
+    {% include scripts.html %}
+  </body>
+</html>

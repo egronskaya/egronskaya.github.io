@@ -1,0 +1,12 @@
+<figure>
+  <div class="img-landscape">
+    <div class="video-embed">
+      <iframe src="{{ include.url }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+{% if include.caption %}
+  <figcaption class="font-italic mt-1" markdown="span">
+    {{ include.caption | markdownify | remove: '<p>' | remove: '</p>' }}
+  </figcaption>
+{% endif %}
+</figure>
