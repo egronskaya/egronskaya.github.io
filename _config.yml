@@ -49,7 +49,7 @@ defaults:
     values:
       title: Elena Gronskaya's Personal Website
       author: Elena Gronskaya
-      layout: default_layout
+      layout: maintenance_layout
       abs_thumbnail: assets/img/default_thumbnail.jpg
       language: en
   -

@@ -1,0 +1,39 @@
+---
+---
+
+<!doctype html>
+<html lang="{{ page.language }}">
+  <head>
+    {% include meta_head.html %}
+    
+    {% include css.html %}
+    
+    <title>Site on maintenance</title>
+  </head>
+
+  <body>
+    <div class="container">
+      
+      {% include header.html %}
+
+      <div class="container">
+          <div class="row">
+            <div class="col-md-12 pb-md-2 pt-2 pb-4 text-center">
+              <h3>  <span class="fa fa-exclamation-triangle"></span> 404: Website is currently on maintenance </h3>
+            </div>
+            <div class="col-md-12 pb-md-2 pt-2 pb-4 text-center">
+                <span class="fa fa-envelope-open fa-fw"></span> 
+                You can contact me via <a href="mailto:elena@gronsky.ru" target="_blank">elena@gronsky.ru</a>
+            </div>
+          </div>
+          <p><a href="{% link index.html %}"><span class="fa fa-angle-double-left"></span> Go to Home page</a></p>
+          <hr>
+        </div>
+
+      {% include footer.html %}
+
+    </div> <!-- /container -->
+
+    {% include scripts.html %}
+  </body>
+</html>
