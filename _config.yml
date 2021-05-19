@@ -18,7 +18,7 @@ email: nelle178@aol.com
 # description: >- # this means to ignore newlines until "baseurl:"
   # My Blog
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://gronskaya.org" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://egronskaya.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  egronskaya
 
 destination: ~/Documents/static_web/egronskaya
